@@ -5,7 +5,7 @@ allprojects {
     /*指定编辑器*/
     apply plugin: 'idea'
     /*配置项目信息*/
-    group 'me.luyiguo.study'
+    group 'github.no1guo.learn'
     version '1.0-SNAPSHOT'
     repositories{
         mavenLocal()
