@@ -1,3 +1,6 @@
 include 'leetcode-java'
 include 'JUC-demo'
+include 'netty-demo'
+include 'common'
+include 'java-basic'
 
