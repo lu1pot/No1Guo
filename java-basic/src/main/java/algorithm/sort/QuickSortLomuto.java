@@ -1,7 +1,9 @@
 package algorithm.sort;
 
 import algorithm.sort.sort0.MyQuickSort;
-
+/**
+ * 采用Lomuto分区
+ */
 public class QuickSortLomuto extends MyQuickSort {
     @Override
     protected int partition(int left,int right){

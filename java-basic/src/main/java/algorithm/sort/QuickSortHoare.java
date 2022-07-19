@@ -2,6 +2,9 @@ package algorithm.sort;
 
 import algorithm.sort.sort0.MyQuickSort;
 
+/**
+ * 采用Hoare分区
+ */
 public class QuickSortHoare extends MyQuickSort {
     @Override
     protected int partition(int left,int right){
