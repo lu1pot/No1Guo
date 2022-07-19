@@ -1,16 +1,18 @@
-allprojects {
 
+
+allprojects {
     group 'github.no1guo.learn'
     version '1.0-SNAPSHOT'
-
 }
 
 subprojects{
-    apply plugin: 'idea'
+
     apply plugin: 'java'
+    apply plugin: 'application'
 
     repositories{
         mavenLocal()
+        maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" }
         mavenCentral()
     }
     sourceCompatibility = 1.8

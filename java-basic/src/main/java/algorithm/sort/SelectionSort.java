@@ -1,7 +1,10 @@
 package algorithm.sort;
 
 
-public class SelectionSort implements MySort{
+import algorithm.sort.sort0.MySort;
+import algorithm.sort.sort0.SortUtils;
+
+public class SelectionSort extends SortUtils implements MySort {
 
     @Override
     public void doSort(int[] list){
@@ -13,7 +16,7 @@ public class SelectionSort implements MySort{
                     min = j;
                 }
             }
-            SortUtils.swap(list,min,i);
+           swap(list,min,i);
         }
 
     }

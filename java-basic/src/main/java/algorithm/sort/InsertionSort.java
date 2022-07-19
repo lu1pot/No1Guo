@@ -1,6 +1,9 @@
 package algorithm.sort;
 
-public class InsertionSort implements MySort{
+import algorithm.sort.sort0.MySort;
+import algorithm.sort.sort0.SortUtils;
+
+public class InsertionSort extends SortUtils implements MySort {
     @Override
     public void doSort(int[] list) {
         int i,j,tmp;

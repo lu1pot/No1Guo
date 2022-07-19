@@ -1,6 +1,12 @@
 
+plugins {
+    id 'application'
+}
 
 dependencies {
 
 }
 
+application {
+    mainClass = 'algorithm.bisearch.Main'
+}
