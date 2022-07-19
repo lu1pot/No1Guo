@@ -2,7 +2,7 @@ package algorithm.sort;
 
 import algorithm.sort.sort0.MyQuickSort;
 
-public class QuickSortHuole extends MyQuickSort {
+public class QuickSortHoare extends MyQuickSort {
     @Override
     protected int partition(int left,int right){
         int pv = list[left];
