@@ -31,7 +31,7 @@ public class MyNioServer {
         ssc.register(selector, SelectionKey.OP_ACCEPT);
 
         while (true){
-            //这一步会阻塞，当有Channel准备就绪时或者超过1000秒后会返回。
+            //这一步会阻塞，当有Channel准备就绪时或者超过1000秒后会返回。0
             selector.select(1000);
         //获取所有的准备就绪的Channel，SelectionKey中包含中Channel信息
             Set<SelectionKey> selectionKeySet = selector.selectedKeys();

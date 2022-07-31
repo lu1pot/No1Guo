@@ -1,7 +1,6 @@
 package algorithm.sort;
 
 import algorithm.sort.sort0.MyQuickSort;
-
 /**
  * 采用Hoare分区
  */
