@@ -1,12 +1,52 @@
 package offer07;
-/*
-        前序遍历列表：第一个元素永远是 【根节点 (root)】
-        中序遍历列表：根节点 (root)【左边】的所有元素都在根节点的【左分支】，【右边】的所有元素都在根节点的【右分支】
-        算法思路：
-        通过【前序遍历列表】确定【根节点 (root)】
-        将【中序遍历列表】的节点分割成【左分支节点】和【右分支节点】
-        递归寻找【左分支节点】中的【根节点 (left child)】和 【右分支节点】中的【根节点 (right child)】
 
-        */
 public class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        TreeNode root = new TreeNode(preorder[0]);
+        int root_idx = biSearch(inorder, root.val); //找到root在中序的位置，确定左右子树范围
+
+        root.left = doBuildTree(preorder,inorder,1,root_idx - 1,0,root_idx - 1);
+        root.right = doBuildTree(preorder,inorder,root_idx + 1, preorder.length - 1, root_idx + 1, inorder.length - 1);
+        return root;
+    }
+
+    public TreeNode doBuildTree(int[] preorder, int[] inorder,
+                                int pre_start,int pre_end,
+                                int in_start,int in_end) {
+
+        if(pre_start > pre_end){
+            return null;
+        }
+        TreeNode node = new TreeNode(preorder[pre_start]);
+
+        int node_idx = biSearch(inorder, node.val);
+        int left_size = node_idx - in_start;
+        node.left = doBuildTree(preorder,inorder,pre_start + 1,pre_start + left_size,in_start,node_idx - 1);
+        node.right = doBuildTree(preorder,inorder,node_idx + 1, in_end,node_idx + 1,in_end);
+
+        return node;
+    }
+
+
+    private int biSearch(int[] nums,int target){
+        int left,right,mid;
+        left = 0;
+        right = nums.length;
+        while (true){
+            mid = (left+right) >>> 1;
+            if(target > nums[mid]){
+                left = mid + 1;
+            }
+            if(target < nums[mid]){
+                right = mid - 1;
+            }
+            if(left > right){
+                break;
+            }
+            if(target == nums[mid]){
+                return mid;
+            }
+        }
+        return -1;
+    }
 }
