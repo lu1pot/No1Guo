@@ -13,7 +13,7 @@ public class QuickSortLomuto extends MyQuickSort {
             if(list[i] < pv) {
                 swap(list,i,j);
                 j++;
-            }
+             }
         }
         swap(list,j,right);
         System.out.printf("%d : %d \n",j,list[j]);
