@@ -1,5 +1,7 @@
 package middleNode;
 
+import likouUtils.ListNode;
+
 public class Solution {
     public ListNode middleNode(ListNode head) {
         int len = 0;
@@ -25,11 +27,5 @@ public class Solution {
         }
         return slow;
     }
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
+
 }
