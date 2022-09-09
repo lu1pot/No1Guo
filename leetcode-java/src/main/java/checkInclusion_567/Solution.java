@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Solution {
         public boolean checkInclusion(String s1, String s2) {
+
             int n = s1.length(), m = s2.length();
             if (n > m) {
                 return false;
